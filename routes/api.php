@@ -99,4 +99,37 @@ Route::post('verifyTokenOnUser', function (Request $request) {
     return response()->json($response);
 });
 
+Route::get('verifyTokenOnPermission', function (Request $request) {
+    $challenge = $request->query->get('hub_challenge');
+    $verify_token = $request->query->get('hub_verify_token');
+
+    if ($verify_token == \App\Http\Facade\Constant::VERIFY_TOKEN_WEBHOOK) {
+        echo $challenge;
+    }
+});
+
+Route::post('verifyTokenOnPermission', function (Request $request) {
+    $response = [];
+    $files = \Illuminate\Support\Facades\Storage::disk('webHookPermission')->allFiles();
+    $data = $request->request->all();
+
+    //event user
+    if(isset($data['entry'][0]['changed_fields'])) {
+        $field = $data['entry'][0]['changed_fields'][0];
+        foreach ($files as $file) {
+            $class = \App\Http\Facade\Constant::DIRECTORY_FACADE_PERMISSION['namespace'] . '\\' . pathinfo($file)['filename'];
+            $class = new $class;
+            $event = $class->event;
+            if($field == $event) {
+                $response = $class->action($data);
+            }
+        }
+
+        if(empty($response)) {
+            $response['message'] = 'Missing Event';
+        }
+    }
+
+    return response()->json($response);
+});
 

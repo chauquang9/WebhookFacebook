@@ -58,6 +58,11 @@ return [
             'root' => app_path(\App\Http\Facade\Constant::DIRECTORY_FACADE_USER['directory']),
         ],
 
+        'webHookPermission' => [
+            'driver' => 'local',
+            'root' => app_path(\App\Http\Facade\Constant::DIRECTORY_FACADE_PERMISSION['directory']),
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

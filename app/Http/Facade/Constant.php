@@ -18,6 +18,11 @@ class Constant
         'namespace' => 'App\Http\Facade\WebHookUser'
     ];
 
+    const DIRECTORY_FACADE_PERMISSION = [
+        'directory' => 'Http/Facade/WebHookPermission',
+        'namespace' => 'App\Http\Facade\WebHookPermission'
+    ];
+
     const VERIFY_TOKEN_WEBHOOK = '123456';
 
     const FACEBOOK_APP_ID = '323277902069047';
@@ -31,4 +36,12 @@ class Constant
     const FACEBOOK_HOOK_PAGE = 'page';
 
     const FACEBOOK_HOOK_USER = 'user';
+
+    const FACEBOOK_HOOK_PERMISSION = 'permission';
+
+    const FACEBOOK_FEED_ITEM_COMMENT = 'comment';
+
+    const FACEBOOK_FEED_ITEM_STATUS = 'status';
+
+    const FACEBOOK_FEED_ITEM_REACTION = 'reaction';
 }

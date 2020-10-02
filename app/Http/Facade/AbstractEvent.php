@@ -61,6 +61,10 @@ abstract class AbstractEvent
                 $message = $data['entry'][0]['changed_fields'][0];
 
                 break;
+            case Constant::FACEBOOK_HOOK_PERMISSION:
+                $message = $data['entry'][0]['changed_fields'][0];
+
+                break;
             default:
                 $message = 'Quang is the best';
         }

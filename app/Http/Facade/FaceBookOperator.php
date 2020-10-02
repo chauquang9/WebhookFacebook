@@ -2,6 +2,7 @@
 
 namespace App\Http\Facade;
 
+use App\Http\Facade\GraphAPI\Comment;
 use App\Http\Facade\GraphAPI\Messenger;
 use App\Http\Facade\GraphAPI\Page;
 use App\Http\Facade\Support\Token;
@@ -35,5 +36,13 @@ class FaceBookOperator
     public function page() : Page
     {
         return new Page();
+    }
+
+    /**
+     * @return Comment
+     */
+    public function comment() : Comment
+    {
+        return new Comment();
     }
 }

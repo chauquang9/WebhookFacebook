@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\App;
  * Class Token
  * @package App\Http\Facade\Support
  */
-class Token implements TokenInterface
+class Token
 {
     /**
      * @return string
@@ -17,7 +17,7 @@ class Token implements TokenInterface
     public function getAccessToken() {
         if(App::environment('local')) {
             // https://developers.facebook.com/tools/explorer/
-            return 'EAAEmBQCEPTcBAI86w2ynjlEoIaQ9BDdWMw7DmNFz7wTPjtAgFcSmIeMMiiBZCn7tGPhsOW2wKiMvZB7yoHozkft4KyPgZBheFBe6baF1B0VhTNYZCNfC91hN2hjl2YjjleNmGZAHqoux8RDuZAKfZCXMh9RfqndxIndpbhTXfgHe2ohAbOGvMnDglRgUI4ljmv4T60RVXSS23mOfSxiptFW';
+            return 'EAAEmBQCEPTcBADMTVNW5iiveXqDuSDj6ycfMQjf3vHBScLRwiJH1hO7OBadmXayaKjkZCkhopmIuXMgaqo8XA4IWOzTQuS2ru7hDZCcxdnN3SJywwgOuAnI6tRT6oNYrK5Dpd4iyKc3acgZAtnJz4FDOitkOgikCMkJJdPYnZBeuEwI4vZApwKNU6elOePccZD';
         }
 
         return Constant::FACEBOOK_APP_ID.'|'.Constant::FACEBOOK_APP_SECRET;
