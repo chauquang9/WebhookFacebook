@@ -28,7 +28,7 @@ https://developers.facebook.com/docs/facebook-login/access-tokens/refreshing/
 - Run ngrok : ``./ngrok http 8000``
 - Debug : http://localhost:4040/inspect/http
 
-## Add one hook in facebook
+## Add one webhook in facebook
 1. Go to filesystem.php and Constant
 2. Create new route with method GET and POST
 
