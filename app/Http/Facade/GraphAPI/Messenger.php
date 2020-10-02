@@ -4,9 +4,6 @@
 namespace App\Http\Facade\GraphAPI;
 
 use App\Http\Facade\Constant;
-use App\Http\Facade\FacadeFacebook;
-use App\Http\Facade\Support\ConstructFacebook;
-use App\Http\Facade\Support\Token;
 
 /**
  * Class Messenger
@@ -22,15 +19,7 @@ class Messenger extends AbstractGraphAPI
      */
     public function sendMessageToUser($message, $id = Constant::FACEBOOK_QUOC_QUANG_ID)
     {
-        /**
-         * @var Token $token
-         */
-        $token = FacadeFacebook::token();
-        $accessToken = $token->getAccessToken();
-
-        $fb = ConstructFacebook::construct();
-
-        $response = $fb->post(
+        $response = $this->fb->post(
             '/'.Constant::FACEBOOK_PAGE_ID.'/messages',
             array(
                 'messaging_type' => 'RESPONSE',
@@ -41,7 +30,7 @@ class Messenger extends AbstractGraphAPI
                     "text" => $message
                 ]
             ),
-            $accessToken
+            $this->accessToken
         );
 
         $graphNode = $response->getGraphNode();

@@ -2,9 +2,6 @@
 
 namespace App\Http\Facade\GraphAPI;
 
-use App\Http\Facade\Constant;
-use App\Model\LogReplyFacebook;
-
 /**
  * Class Comment
  * @package App\Http\Facade\GraphAPI
