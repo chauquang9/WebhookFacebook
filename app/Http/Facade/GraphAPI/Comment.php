@@ -28,14 +28,6 @@ class Comment extends AbstractGraphAPI
             $this->accessToken
         );
 
-        if(!empty($senderId)) {
-            $dataInsert = [
-                'sender_id' => $senderId,
-                'message' => $message,
-            ];
-            LogReplyFacebook::create($dataInsert);
-        }
-
         $graphNode = $response->getGraphNode();
 
         return $graphNode;

@@ -43,8 +43,7 @@ class FeedEvent extends AbstractEvent implements InterfaceEvent
                         $message = $dataFromHook['message'];
 
                         //track item exists avoid loop in webhook facebook
-                        $object = LogReplyFacebook::where('sender_id', $senderId)->where('message', $message)->first();
-                        if (empty($object)) {
+                        if($dataFromHook['post_id'] === $dataFromHook['parent_id']) {
                             /**
                              * @var Comment $comment
                              */
