@@ -48,7 +48,7 @@ abstract class EventAbstract
             $messenger = FacadeFacebook::messenger();
             $message = $this->getMessage($data);
 
-            return $messenger->sendMessageToUser($message);
+            return $messenger->post($message, env('FACEBOOK_QUOC_QUANG_ID'));
         } catch (\Facebook\Exceptions\FacebookResponseException $e) {
             echo 'Graph returned an error: ' . $e->getMessage();
             exit;

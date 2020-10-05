@@ -23,8 +23,6 @@ class Constant
         'namespace' => 'App\Http\Facebook\WebHookPermission'
     ];
 
-    const VERIFY_TOKEN_WEBHOOK = '123456';
-
     const FACEBOOK_HOOK_PAGE = 'page';
 
     const FACEBOOK_HOOK_USER = 'user';
