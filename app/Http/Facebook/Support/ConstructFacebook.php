@@ -18,8 +18,8 @@ class ConstructFacebook
     public static function construct()
     {
         $fb = new Facebook([
-            'app_id' => Constant::FACEBOOK_APP_ID,
-            'app_secret' => Constant::FACEBOOK_APP_SECRET,
+            'app_id' => env('FACEBOOK_APP_ID'),
+            'app_secret' => env('FACEBOOK_APP_SECRET'),
             'default_graph_version' => 'v8.0',
         ]);
 

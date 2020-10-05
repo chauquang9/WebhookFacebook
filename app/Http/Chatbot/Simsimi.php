@@ -19,10 +19,10 @@ class Simsimi extends BotAbstract implements BotInterface
     {
         $response = Http::withHeaders(
             [
-                'x-api-key' => 'vsDQhV-GGBHDlXOH4btb72dRmi86NJOc9UMT5foY',
+                'x-api-key' => env('SIMSIMI_API_KEY'),
                 'Content-Type' => 'application/json',
             ]
-        )->post('https://wsapi.simsimi.com/190410/talk',
+        )->post(env('SIMSIMI_DOMAIN').'/talk',
             [
                 'utext' => $text,
                 'lang' => 'vi',

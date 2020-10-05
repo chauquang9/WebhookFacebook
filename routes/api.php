@@ -22,7 +22,7 @@ Route::get('verifyTokenOnPage', function (Request $request) {
     $challenge = $request->query->get('hub_challenge');
     $verify_token = $request->query->get('hub_verify_token');
 
-    if ($verify_token == \App\Http\Facebook\Constant::VERIFY_TOKEN_WEBHOOK) {
+    if ($verify_token == env('VERIFY_TOKEN_WEBHOOK')) {
         echo $challenge;
     }
 });
@@ -61,7 +61,7 @@ Route::post('verifyTokenOnPage', function (Request $request) {
              */
             $messenger = \App\Http\Facebook\FacadeFacebook::messenger();
 
-            $response = $messenger->sendMessageToUser($message, $sender);
+            $response = $messenger->post($message, $sender);
         }
     }
 
@@ -72,7 +72,7 @@ Route::get('verifyTokenOnUser', function (Request $request) {
     $challenge = $request->query->get('hub_challenge');
     $verify_token = $request->query->get('hub_verify_token');
 
-    if ($verify_token == \App\Http\Facebook\Constant::VERIFY_TOKEN_WEBHOOK) {
+    if ($verify_token == env('VERIFY_TOKEN_WEBHOOK')) {
         echo $challenge;
     }
 });
@@ -106,7 +106,7 @@ Route::get('verifyTokenOnPermission', function (Request $request) {
     $challenge = $request->query->get('hub_challenge');
     $verify_token = $request->query->get('hub_verify_token');
 
-    if ($verify_token == \App\Http\Facebook\Constant::VERIFY_TOKEN_WEBHOOK) {
+    if ($verify_token == env('VERIFY_TOKEN_WEBHOOK')) {
         echo $challenge;
     }
 });

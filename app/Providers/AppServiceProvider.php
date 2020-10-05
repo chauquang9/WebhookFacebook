@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Http\Chatbot\Alexa;
 use App\Http\Chatbot\BotInterface;
 use App\Http\Chatbot\Simsimi;
 use Illuminate\Support\ServiceProvider;

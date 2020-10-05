@@ -12,11 +12,11 @@ class Page extends AbstractGraphAPI
 {
     /**
      * @param $message
-     * @param int $pageId
+     * @param $pageId
      * @return \Facebook\GraphNodes\GraphNode
      * @throws \Facebook\Exceptions\FacebookSDKException
      */
-    public function post($message, $pageId = Constant::FACEBOOK_PAGE_ID)
+    public function post($message, $pageId)
     {
         $response = $this->fb->post(
             '/'.$pageId.'/feed',

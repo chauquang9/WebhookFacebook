@@ -13,15 +13,15 @@ class Messenger extends AbstractGraphAPI
 {
     /**
      * @param $message
-     * @param int $id
+     * @param $id
      * @return \Facebook\GraphNodes\GraphNode
      * @throws \Facebook\Exceptions\FacebookSDKException
      */
-    public function sendMessageToUser($message, $id = Constant::FACEBOOK_QUOC_QUANG_ID)
+    public function post($message, $id)
     {
         $botResponse = $this->bot->question($message);
         $response = $this->fb->post(
-            '/' . Constant::FACEBOOK_PAGE_ID . '/messages',
+            '/' . env('FACEBOOK_PAGE_ID') . '/messages',
             array(
                 'messaging_type' => 'RESPONSE',
                 "recipient" => [

@@ -17,9 +17,9 @@ class Token
     public function getAccessToken() {
         if(App::environment('local')) {
             // https://developers.facebook.com/tools/explorer/
-            return 'EAAEmBQCEPTcBADMTVNW5iiveXqDuSDj6ycfMQjf3vHBScLRwiJH1hO7OBadmXayaKjkZCkhopmIuXMgaqo8XA4IWOzTQuS2ru7hDZCcxdnN3SJywwgOuAnI6tRT6oNYrK5Dpd4iyKc3acgZAtnJz4FDOitkOgikCMkJJdPYnZBeuEwI4vZApwKNU6elOePccZD';
+            return env('FACEBOOK_LONG_LIVE_TOKEN');
         }
 
-        return Constant::FACEBOOK_APP_ID.'|'.Constant::FACEBOOK_APP_SECRET;
+        return env('FACEBOOK_APP_ID').'|'.env('FACEBOOK_APP_SECRET');
     }
 }
