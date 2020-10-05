@@ -1,9 +1,9 @@
 <?php
 
 
-namespace App\Http\Facade\GraphAPI;
+namespace App\Http\Facebook\GraphAPI;
 
-use App\Http\Facade\Constant;
+use App\Http\Facebook\Constant;
 
 /**
  * Class Messenger
@@ -19,15 +19,16 @@ class Messenger extends AbstractGraphAPI
      */
     public function sendMessageToUser($message, $id = Constant::FACEBOOK_QUOC_QUANG_ID)
     {
+        $botResponse = $this->bot->question($message);
         $response = $this->fb->post(
-            '/'.Constant::FACEBOOK_PAGE_ID.'/messages',
+            '/' . Constant::FACEBOOK_PAGE_ID . '/messages',
             array(
                 'messaging_type' => 'RESPONSE',
                 "recipient" => [
                     "id" => $id
                 ],
                 "message" => [
-                    "text" => $message
+                    "text" => $botResponse
                 ]
             ),
             $this->accessToken

@@ -50,17 +50,17 @@ return [
 
         'webHookPage' => [
             'driver' => 'local',
-            'root' => app_path(\App\Http\Facade\Constant::DIRECTORY_FACADE_PAGE['directory']),
+            'root' => app_path(\App\Http\Facebook\Constant::DIRECTORY_FACADE_PAGE['directory']),
         ],
 
         'webHookUser' => [
             'driver' => 'local',
-            'root' => app_path(\App\Http\Facade\Constant::DIRECTORY_FACADE_USER['directory']),
+            'root' => app_path(\App\Http\Facebook\Constant::DIRECTORY_FACADE_USER['directory']),
         ],
 
         'webHookPermission' => [
             'driver' => 'local',
-            'root' => app_path(\App\Http\Facade\Constant::DIRECTORY_FACADE_PERMISSION['directory']),
+            'root' => app_path(\App\Http\Facebook\Constant::DIRECTORY_FACADE_PERMISSION['directory']),
         ],
 
         'public' => [

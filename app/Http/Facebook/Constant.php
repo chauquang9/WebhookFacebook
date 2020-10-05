@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Facade;
+namespace App\Http\Facebook;
 
 /**
  * Class Constant
@@ -9,18 +9,18 @@ namespace App\Http\Facade;
 class Constant
 {
     const DIRECTORY_FACADE_PAGE = [
-        'directory' => 'Http/Facade/WebHookPage',
-        'namespace' => 'App\Http\Facade\WebHookPage'
+        'directory' => 'Http/Facebook/WebHookPage',
+        'namespace' => 'App\Http\Facebook\WebHookPage'
     ];
 
     const DIRECTORY_FACADE_USER = [
-        'directory' => 'Http/Facade/WebHookUser',
-        'namespace' => 'App\Http\Facade\WebHookUser'
+        'directory' => 'Http/Facebook/WebHookUser',
+        'namespace' => 'App\Http\Facebook\WebHookUser'
     ];
 
     const DIRECTORY_FACADE_PERMISSION = [
-        'directory' => 'Http/Facade/WebHookPermission',
-        'namespace' => 'App\Http\Facade\WebHookPermission'
+        'directory' => 'Http/Facebook/WebHookPermission',
+        'namespace' => 'App\Http\Facebook\WebHookPermission'
     ];
 
     const VERIFY_TOKEN_WEBHOOK = '123456';

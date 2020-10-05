@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Facade\WebHookPage;
+namespace App\Http\Facebook\WebHookPage;
 
-use App\Http\Facade\AbstractEvent;
-use App\Http\Facade\Constant;
-use App\Http\Facade\FacadeFacebook;
-use App\Http\Facade\GraphAPI\Comment;
-use App\Http\Facade\InterfaceEvent;
-use App\Model\LogReplyFacebook;
+use App\Http\Facebook\AbstractEvent;
+use App\Http\Facebook\Constant;
+use App\Http\Facebook\FacadeFacebook;
+use App\Http\Facebook\GraphAPI\Comment;
+use App\Http\Facebook\InterfaceEvent;
 
 /**
  * Class FeedEvent
@@ -44,11 +43,13 @@ class FeedEvent extends AbstractEvent implements InterfaceEvent
 
                         //track item exists avoid loop in webhook facebook
                         if($dataFromHook['post_id'] === $dataFromHook['parent_id']) {
+                            $botResponse = $this->bot->question($message);
+
                             /**
                              * @var Comment $comment
                              */
                             $comment = FacadeFacebook::comment();
-                            $response = $comment->post($message, $commentId, $senderId);
+                            $response = $comment->post($botResponse, $commentId, $senderId);
                         }
 
                         break;

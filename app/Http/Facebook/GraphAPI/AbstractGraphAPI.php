@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Facade\GraphAPI;
+namespace App\Http\Facebook\GraphAPI;
 
-use App\Http\Facade\FacadeFacebook;
-use App\Http\Facade\Support\ConstructFacebook;
-use App\Http\Facade\Support\Token;
+use App\Http\Chatbot\InterfaceBot;
+use App\Http\Facebook\FacadeFacebook;
+use App\Http\Facebook\Support\ConstructFacebook;
+use App\Http\Facebook\Support\Token;
 
 /**
  * Class AbstractGraphAPI
@@ -23,6 +24,11 @@ abstract class AbstractGraphAPI
     protected $accessToken;
 
     /**
+     * @var InterfaceBot
+     */
+    protected $bot;
+
+    /**
      * Page constructor.
      */
     public function __construct()
@@ -35,5 +41,6 @@ abstract class AbstractGraphAPI
 
         $this->fb = ConstructFacebook::construct();
         $this->accessToken = $accessToken;
+        $this->bot = app()->make(InterfaceBot::class);
     }
 }

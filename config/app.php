@@ -227,7 +227,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'FaceBookAll' => \App\Http\Facade\FacadeFacebook::class,
+        'FaceBookAll' => \App\Http\Facebook\FacadeFacebook::class,
 
     ],
 

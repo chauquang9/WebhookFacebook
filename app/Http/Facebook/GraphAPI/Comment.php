@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Facade\GraphAPI;
+namespace App\Http\Facebook\GraphAPI;
 
 /**
  * Class Comment
