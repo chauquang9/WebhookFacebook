@@ -22,7 +22,7 @@ Route::get('verifyTokenOnPage', function (Request $request) {
     $challenge = $request->query->get('hub_challenge');
     $verify_token = $request->query->get('hub_verify_token');
 
-    if ($verify_token == \App\Http\Facade\Constant::VERIFY_TOKEN_WEBHOOK) {
+    if ($verify_token == \App\Http\Facebook\Constant::VERIFY_TOKEN_WEBHOOK) {
         echo $challenge;
     }
 });
@@ -36,7 +36,7 @@ Route::post('verifyTokenOnPage', function (Request $request) {
     if(isset($data['entry'][0]['changes'])) {
         $field = $data['entry'][0]['changes'][0]['field'];
         foreach ($files as $file) {
-            $class = \App\Http\Facade\Constant::DIRECTORY_FACADE_PAGE['namespace'] . '\\' . pathinfo($file)['filename'];
+            $class = \App\Http\Facebook\Constant::DIRECTORY_FACADE_PAGE['namespace'] . '\\' . pathinfo($file)['filename'];
             $class = new $class;
             $event = $class->event;
             if($field == $event) {
@@ -51,15 +51,18 @@ Route::post('verifyTokenOnPage', function (Request $request) {
 
     //messenger
     if(isset($data['entry'][0]['messaging'])) {
+        $isWatermark = !empty($data['entry'][0]['messaging'][0]['delivery']['watermark']) ? TRUE : FALSE;
         $message = !empty($data['entry'][0]['messaging'][0]['message']['text']) ? $data['entry'][0]['messaging'][0]['message']['text'] : '';
         $sender = !empty($data['entry'][0]['messaging'][0]['sender']['id']) ? $data['entry'][0]['messaging'][0]['sender']['id'] : '';
 
-        /**
-         * @var \App\Http\Facade\GraphAPI\Messenger $messenger
-         */
-        $messenger = \App\Http\Facade\FacadeFacebook::messenger();
+        if(!$isWatermark) {
+            /**
+             * @var \App\Http\Facebook\GraphAPI\Messenger $messenger
+             */
+            $messenger = \App\Http\Facebook\FacadeFacebook::messenger();
 
-        $response = $messenger->sendMessageToUser($message, $sender);
+            $response = $messenger->sendMessageToUser($message, $sender);
+        }
     }
 
     return response()->json($response);
@@ -69,7 +72,7 @@ Route::get('verifyTokenOnUser', function (Request $request) {
     $challenge = $request->query->get('hub_challenge');
     $verify_token = $request->query->get('hub_verify_token');
 
-    if ($verify_token == \App\Http\Facade\Constant::VERIFY_TOKEN_WEBHOOK) {
+    if ($verify_token == \App\Http\Facebook\Constant::VERIFY_TOKEN_WEBHOOK) {
         echo $challenge;
     }
 });
@@ -83,7 +86,7 @@ Route::post('verifyTokenOnUser', function (Request $request) {
     if(isset($data['entry'][0]['changed_fields'])) {
         $field = $data['entry'][0]['changed_fields'][0];
         foreach ($files as $file) {
-            $class = \App\Http\Facade\Constant::DIRECTORY_FACADE_USER['namespace'] . '\\' . pathinfo($file)['filename'];
+            $class = \App\Http\Facebook\Constant::DIRECTORY_FACADE_USER['namespace'] . '\\' . pathinfo($file)['filename'];
             $class = new $class;
             $event = $class->event;
             if($field == $event) {
@@ -103,7 +106,7 @@ Route::get('verifyTokenOnPermission', function (Request $request) {
     $challenge = $request->query->get('hub_challenge');
     $verify_token = $request->query->get('hub_verify_token');
 
-    if ($verify_token == \App\Http\Facade\Constant::VERIFY_TOKEN_WEBHOOK) {
+    if ($verify_token == \App\Http\Facebook\Constant::VERIFY_TOKEN_WEBHOOK) {
         echo $challenge;
     }
 });
@@ -117,7 +120,7 @@ Route::post('verifyTokenOnPermission', function (Request $request) {
     if(isset($data['entry'][0]['changed_fields'])) {
         $field = $data['entry'][0]['changed_fields'][0];
         foreach ($files as $file) {
-            $class = \App\Http\Facade\Constant::DIRECTORY_FACADE_PERMISSION['namespace'] . '\\' . pathinfo($file)['filename'];
+            $class = \App\Http\Facebook\Constant::DIRECTORY_FACADE_PERMISSION['namespace'] . '\\' . pathinfo($file)['filename'];
             $class = new $class;
             $event = $class->event;
             if($field == $event) {

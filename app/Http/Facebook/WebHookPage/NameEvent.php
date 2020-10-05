@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Facade\WebHookPage;
+namespace App\Http\Facebook\WebHookPage;
 
-use App\Http\Facade\AbstractEvent;
-use App\Http\Facade\Constant;
-use App\Http\Facade\InterfaceEvent;
+use App\Http\Facebook\AbstractEvent;
+use App\Http\Facebook\Constant;
+use App\Http\Facebook\InterfaceEvent;
 
 /**
  * Class NameEvent

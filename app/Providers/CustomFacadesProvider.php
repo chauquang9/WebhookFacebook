@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Http\Facade\FaceBookOperator;
+use App\Http\Facebook\FaceBookOperator;
 use Illuminate\Support\ServiceProvider;
 
 class CustomFacadesProvider extends ServiceProvider

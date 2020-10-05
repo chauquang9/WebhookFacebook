@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Facade\GraphAPI;
+namespace App\Http\Facebook\GraphAPI;
 
-use App\Http\Facade\FacadeFacebook;
-use App\Http\Facade\Support\ConstructFacebook;
-use App\Http\Facade\Support\Token;
+use App\Http\Facebook\FacadeFacebook;
+use App\Http\Facebook\Support\ConstructFacebook;
+use App\Http\Facebook\Support\Token;
 
 /**
  * Class AbstractGraphAPI

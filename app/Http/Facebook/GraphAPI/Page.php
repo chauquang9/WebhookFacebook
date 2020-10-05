@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Facade\GraphAPI;
+namespace App\Http\Facebook\GraphAPI;
 
-use App\Http\Facade\Constant;
+use App\Http\Facebook\Constant;
 
 /**
  * Class Page

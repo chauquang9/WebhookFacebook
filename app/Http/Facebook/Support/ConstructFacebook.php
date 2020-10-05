@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Facade\Support;
+namespace App\Http\Facebook\Support;
 
-use App\Http\Facade\Constant;
+use App\Http\Facebook\Constant;
 use Facebook\Facebook;
 
 /**

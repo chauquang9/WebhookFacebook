@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Facade;
+namespace App\Http\Facebook;
 
-use App\Http\Facade\GraphAPI\Messenger;
+use App\Http\Facebook\GraphAPI\Messenger;
 
 /**
  * Class AbstractEvent

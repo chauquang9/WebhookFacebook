@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Facade;
+namespace App\Http\Facebook;
 
-use App\Http\Facade\GraphAPI\Comment;
-use App\Http\Facade\GraphAPI\Messenger;
-use App\Http\Facade\GraphAPI\Page;
-use App\Http\Facade\Support\Token;
+use App\Http\Facebook\GraphAPI\Comment;
+use App\Http\Facebook\GraphAPI\Messenger;
+use App\Http\Facebook\GraphAPI\Page;
+use App\Http\Facebook\Support\Token;
 
 /**
  * Class FaceBookOperator
