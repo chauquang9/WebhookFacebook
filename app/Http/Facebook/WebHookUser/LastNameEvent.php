@@ -2,15 +2,15 @@
 
 namespace App\Http\Facebook\WebHookUser;
 
-use App\Http\Facebook\AbstractEvent;
+use App\Http\Facebook\EventAbstract;
 use App\Http\Facebook\Constant;
-use App\Http\Facebook\InterfaceEvent;
+use App\Http\Facebook\EventInterface;
 
 /**
  * Class LastNameEvent
  * @package App\Http\Facade\WebHookUser
  */
-class LastNameEvent extends AbstractEvent implements InterfaceEvent
+class LastNameEvent extends EventAbstract implements EventInterface
 {
     /**
      * @var string

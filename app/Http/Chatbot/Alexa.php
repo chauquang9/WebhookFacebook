@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
  * Class Alexa
  * @package App\Http\Chatbot
  */
-class Alexa extends AbstractBot implements InterfaceBot
+class Alexa extends BotAbstract implements BotInterface
 {
     /**
      * @param string $text

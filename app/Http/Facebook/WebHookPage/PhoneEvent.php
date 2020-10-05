@@ -2,15 +2,15 @@
 
 namespace App\Http\Facebook\WebHookPage;
 
-use App\Http\Facebook\AbstractEvent;
+use App\Http\Facebook\EventAbstract;
 use App\Http\Facebook\Constant;
-use App\Http\Facebook\InterfaceEvent;
+use App\Http\Facebook\EventInterface;
 
 /**
  * Class PhoneEvent
  * @package App\Http\Facade\WebHookPage
  */
-class PhoneEvent extends AbstractEvent implements InterfaceEvent
+class PhoneEvent extends EventAbstract implements EventInterface
 {
     /**
      * @var string

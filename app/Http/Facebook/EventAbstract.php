@@ -2,14 +2,14 @@
 
 namespace App\Http\Facebook;
 
-use App\Http\Chatbot\InterfaceBot;
+use App\Http\Chatbot\BotInterface;
 use App\Http\Facebook\GraphAPI\Messenger;
 
 /**
- * Class AbstractEvent
+ * Class EventAbstract
  * @package App\Http\Facade
  */
-abstract class AbstractEvent
+abstract class EventAbstract
 {
     /**
      * @var null
@@ -22,17 +22,17 @@ abstract class AbstractEvent
     public $hook = NULL;
 
     /**
-     * @var InterfaceBot|null
+     * @var BotInterface|null
      */
     public $bot = NULL;
 
     /**
-     * AbstractEvent constructor.
+     * EventAbstract constructor.
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function __construct()
     {
-        $this->bot = app()->make(InterfaceBot::class);
+        $this->bot = app()->make(BotInterface::class);
     }
 
     /**
