@@ -3,10 +3,10 @@
 namespace App\Http\Facebook;
 
 /**
- * Interface InterfaceEvent
+ * Interface EventInterface
  * @package App\Http\Facade
  */
-interface InterfaceEvent {
+interface EventInterface {
 
     /**
      * @param array $data

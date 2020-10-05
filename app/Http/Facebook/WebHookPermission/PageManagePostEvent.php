@@ -2,15 +2,15 @@
 
 namespace App\Http\Facebook\WebHookPermission;
 
-use App\Http\Facebook\AbstractEvent;
+use App\Http\Facebook\EventAbstract;
 use App\Http\Facebook\Constant;
-use App\Http\Facebook\InterfaceEvent;
+use App\Http\Facebook\EventInterface;
 
 /**
  * Class PageManagePostEvent
  * @package App\Http\Facade\WebHookPermission
  */
-class PageManagePostEvent extends AbstractEvent implements InterfaceEvent
+class PageManagePostEvent extends EventAbstract implements EventInterface
 {
     /**
      * @var string

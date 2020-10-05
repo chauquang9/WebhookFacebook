@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Chatbot\Alexa;
-use App\Http\Chatbot\InterfaceBot;
+use App\Http\Chatbot\BotInterface;
 use App\Http\Chatbot\Simsimi;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(InterfaceBot::class, Simsimi::class);
+        $this->app->bind(BotInterface::class, Simsimi::class);
     }
 
     /**

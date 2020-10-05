@@ -2,17 +2,17 @@
 
 namespace App\Http\Facebook\WebHookPage;
 
-use App\Http\Facebook\AbstractEvent;
+use App\Http\Facebook\EventAbstract;
 use App\Http\Facebook\Constant;
 use App\Http\Facebook\FacadeFacebook;
 use App\Http\Facebook\GraphAPI\Comment;
-use App\Http\Facebook\InterfaceEvent;
+use App\Http\Facebook\EventInterface;
 
 /**
  * Class FeedEvent
  * @package App\Http\Facade\WebHookPage
  */
-class FeedEvent extends AbstractEvent implements InterfaceEvent
+class FeedEvent extends EventAbstract implements EventInterface
 {
     /**
      * @var string

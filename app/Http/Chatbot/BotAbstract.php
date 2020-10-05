@@ -2,7 +2,7 @@
 
 namespace App\Http\Chatbot;
 
-abstract class AbstractBot
+abstract class BotAbstract
 {
     public function question($text)
     {

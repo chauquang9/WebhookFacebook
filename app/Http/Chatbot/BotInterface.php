@@ -4,7 +4,7 @@
 namespace App\Http\Chatbot;
 
 
-interface InterfaceBot
+interface BotInterface
 {
     /**
      * @param $text

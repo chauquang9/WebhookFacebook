@@ -2,7 +2,7 @@
 
 namespace App\Http\Facebook\GraphAPI;
 
-use App\Http\Chatbot\InterfaceBot;
+use App\Http\Chatbot\BotInterface;
 use App\Http\Facebook\FacadeFacebook;
 use App\Http\Facebook\Support\ConstructFacebook;
 use App\Http\Facebook\Support\Token;
@@ -24,7 +24,7 @@ abstract class AbstractGraphAPI
     protected $accessToken;
 
     /**
-     * @var InterfaceBot
+     * @var BotInterface
      */
     protected $bot;
 
@@ -41,6 +41,6 @@ abstract class AbstractGraphAPI
 
         $this->fb = ConstructFacebook::construct();
         $this->accessToken = $accessToken;
-        $this->bot = app()->make(InterfaceBot::class);
+        $this->bot = app()->make(BotInterface::class);
     }
 }

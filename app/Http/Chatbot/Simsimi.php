@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
  * Class Simsimi
  * @package App\Http\Chatbot
  */
-class Simsimi extends AbstractBot implements InterfaceBot
+class Simsimi extends BotAbstract implements BotInterface
 {
     /**
      * @param string $text
@@ -33,6 +33,6 @@ class Simsimi extends AbstractBot implements InterfaceBot
             return $response['atext'];
         }
 
-        return 'Simsimi';
+        return 'Simsimi: Do not understand';
     }
 }
